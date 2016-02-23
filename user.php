@@ -110,15 +110,15 @@
                 <div class='loggedas'>
 					<?php if (isset($_SESSION['usr'])){?>
 					<form action='core/do_recruit.php' method='post'  autocomplete='off' enctype='multipart/form-data'>
-						<div id='inforow' class="skinnytip" data-text="<div class='miniinfo'>Email address of your friend</div>">
+						<div id='recruitrow' class="skinnytip" data-text="<div class='miniinfo'>Email address of your friend</div>">
 							<div class='inforowdesc'>1. Email:</div>
 							<input name='firstEmail' class='emailinput' placeholder="First Friend Email" autocomplete="off" type='text' />
 						</div>
-						<div id='inforow' class="skinnytip" data-text="<div class='miniinfo'>Email address of your friend</div>">
+						<div id='recruitrow' class="skinnytip" data-text="<div class='miniinfo'>Email address of your friend</div>">
 							<div class='inforowdesc'>2 .Email:</div>
 							<input name='secEmail' class='emailinput' placeholder="Second Friend Email" autocomplete="off" type='text' />
 						</div>
-						<div id='inforow' class="skinnytip" data-text="<div class='miniinfo'>Email address of your friend</div>">
+						<div id='recruitrow' class="skinnytip" data-text="<div class='miniinfo'>Email address of your friend</div>">
 							<div class='inforowdesc'>3 .Email:</div>
 							<input name='thirdEmail' class='emailinput' placeholder="Third Friend Email" autocomplete="off" type='text' />
 						</div>

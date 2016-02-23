@@ -618,6 +618,13 @@ background: #1F1F1F;
     background: #212121 url("../images/newsheader.png");
     text-align: center;
 }
+  #recruitrow{
+	margin-left: -10px;
+    margin-top: 5px;
+    width: 265px;
+    height: 40px;
+    overflow: hidden;
+  }
 .realmstat{border-radius: 3px;
     width: 250px;
     height: 90px;
@@ -1148,7 +1155,7 @@ border: 1px solid #383838;
 	margin-left: -10px;
     margin-top: 5px;
     width: 265px;
-    height: 40px;
+    height: 22px;
     overflow: hidden;
   }
  .inforowdesc {
