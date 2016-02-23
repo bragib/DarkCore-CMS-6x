@@ -39,7 +39,7 @@ $user_account = new account;
                     <ul>
                         <li class="main-tools-li"><a href="armory">ARMORY</a></li>
                         <li class="main-tools-li"><a href="guides">GUIDES & DOWNLOADS</a></li>
-                        <li class="main-tools-li"><a href="rules">RULES</a></li>
+                        <li class="main-tools-li"><a href="rules">BUGTRACKER</a></li>
                     </ul>
 				</div>
 			</div>
@@ -152,7 +152,7 @@ $user_account = new account;
             </div>
             <div class="connectionguide"></div>
             <div class="dpatches"></div>
-            <div class="rmlist">set realmlist wotlk.gamingzeta.com</div>
+            <div class="rmlist">set portal <?php echo $realmPortal; ?></div>
             <?php $realminfo = new realm;
             $realminfo->construct(1);?>
             <div class="realmstat">
