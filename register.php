@@ -80,7 +80,7 @@
             $realminfo->construct(1);?>
             <div class="realmstat">
                 <a href="realm?id=<?php echo $realminfo->realm_id;?>">
-                    <img class="gversion" src='images/r-wotlk.png' height='19' alt='username'><div class="realmname"><a href="realm?realm=1/<?php echo urlencode($realminfo->rm_name); ?>" class="realmnamelink"><?php echo $realminfo->rm_name; ?></a></div>
+                    <img class="gversion" src='images/r-wod.png' height='19' alt='username'><div class="realmname"><a href="realm?realm=1/<?php echo urlencode($realminfo->rm_name); ?>" class="realmnamelink"><?php echo $realminfo->rm_name; ?></a></div>
                     <div class="realminfo">Online: <?php echo $realminfo->total_online;?>/250
                     Alliance: <?php echo $realminfo->alliance;?> Horde: <?php echo $realminfo->horde;?></div>
                 </a>

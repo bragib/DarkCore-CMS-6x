@@ -1,7 +1,7 @@
 # DarkCore-CMS
 This is a Trinitycore 6x Website CMS under development<br>
-Author source: <a href="https://github.com/darksoke">Darksoke</a><br>
-Author to 6x: <a href="https://github.com/ProjectcoreDevs">ProjectcoreDevs</a><br>
+Author: <a href="https://github.com/darksoke">Darksoke</a><br>
+Author: <a href="https://github.com/ProjectcoreDevs">ProjectcoreDevs</a><br>
 Contributors: <a href="https://github.com/ProjectcoreDevs">ProjectcoreDevs<a><br>
 
 Description: This website started as a PHP learning atempt but it received a really nice feedback about it's look so I decided to release it for public use and work along with other developers to make a brand new professional FREE TRINITYCORE CMS<br><br>
