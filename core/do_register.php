@@ -2,7 +2,7 @@
 	include 'config.php'; 
 	include 'functions/global_functions.php';
 	$_error= '';
-	if (!isset($_POST['Username']) || !isset($_POST['Email']) || !isset($_POST['Password']) || !isset($_POST['RepeatPassword'])){
+	if (!isset($_POST['Username']) || !isset($_POST['Email']) || !isset($_POST['Password']) || !isset($_POST['RepeatPassword']) || !isset($_POST['Expansion'])){
 		$_error = $_error . 'regerror=1&errtype=';
 		header('Location: ../register?'.$_error);
 	}
@@ -26,7 +26,7 @@
 			$password = $_POST['Password'];
 			$accPassword = encrypt($username, $password);
 			$bnetPassword = bnet_encrypt($username, $password);
-			register_user($username,$accPassword,$_POST['Email']);
+			register_user($username,$accPassword,$_POST['Email'], $_POST['Expansion']);
 			register_bnet_user($_POST['Email'],$bnetPassword);
 			header('Location: ../create_success.php?user='.$username);
 		}

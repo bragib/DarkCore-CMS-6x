@@ -1,4 +1,5 @@
-<?php define('DarkCoreCMS', TRUE); include 'header.php' ?>
+<?php define('DarkCoreCMS', TRUE);
+	include 'header.php';?>
 	<title>GamingZeta - <?php echo ucwords( str_ireplace(array('-', '.php'), array(' ', ''), basename($_SERVER['PHP_SELF']) ) )?></title>
 </head>
 <body>
@@ -6,7 +7,6 @@
 	<div id='header'>
 	</div>
 	<?php include 'menu.php';
-	        include 'core/functions/global_functions.php';
 	 if (isset($_GET["regerror"])){
          get_reg_errors($_GET['regerror']);
     } ?>
@@ -19,11 +19,32 @@
 					<div class="newsdivider"></div>
 					<center>
 						<form action="core/do_register.php" method="post" enctype="multipart/form-data">
-							<input class='reg-input' type='text' name='Username' autocomplete='off' placeholder='Username*' required>
-							<input class='reg-input' type='email' name='Email' autocomplete='off' placeholder='Email*'  required>
-							<input class='reg-input' type='password' name='Password' autocomplete='off' placeholder='Password*'  required>
-							<input class='reg-input' type='password' name='RepeatPassword'	autocomplete='off' placeholder='Repeat Password*'  required>
-							<div class="newsdivider"></div>
+							<table>
+								<tr>
+									<td><input class='reg-input' type="text" name="Username" placeholder="Username*" required></td>
+								</tr>
+								<tr>
+									<td><input class='reg-input' type="email" name="Email" placeholder="Email*" required></td>
+								</tr>
+								<tr>
+									<td><input class='reg-input' type="password" name="Password" autocomplete='off' placeholder="Password*" required></td>
+								</tr>
+								<tr>
+									<td><input class='reg-input' type="password" name="RepeatPassword" autocomplete='off' placeholder="Repeat password*" required></td>
+								</tr>
+								<tr>
+									<td>
+										<select name="Expansion">
+											<option value="0" select="selected">None</option>
+											<option value="1">TBC</option>
+											<option value="2">WotLK</option>
+											<option value="3">Cataclysm</option>
+											<option value="4">Mist Of Pandaria</option>
+											<option value="5">Warlord Of Draenor</option>
+										</select>
+									</td>
+								</tr>
+							</table>
 							<input id='user-submit' type='submit' name='regsubmit' 	value='Register new Account'>
 						</form>
 						<span class='reg-mark'>All (*) marked fields are required !</span>

@@ -61,12 +61,12 @@ function check_email_exist($email){
 	$stmt->close();
 	$con->close();
 }
-function register_user($username,$password,$email){
+function register_user($username,$password,$email,$expansion){
 	global $DB_HOST,$DB_USERNAME,$DB_PASSWORD,$DB_AUTH;
 	$con = connect($DB_HOST,$DB_USERNAME,$DB_PASSWORD);
-	$sql = "INSERT INTO ".$DB_AUTH.".account (username, sha_pass_hash, email) VALUES (?,?,?)";
+	$sql = "INSERT INTO ".$DB_AUTH.".account (username, sha_pass_hash, email, expansion) VALUES (?,?,?,?)";
 	if ($stmt = $con->prepare($sql)) {
-		$stmt->bind_param("sss", $username, $password, $email);
+		$stmt->bind_param("sssi", $username, $password, $email, $expansion);
 		$stmt->execute();
 		$stmt->close();
 	}

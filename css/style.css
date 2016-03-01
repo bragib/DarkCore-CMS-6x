@@ -837,7 +837,6 @@ background: #383838;
     border-radius: 5px;
     text-shadow: 0px 3px 8px #000;
     margin-bottom: 15px;
-    margin-left: 20px;
 }
 #user-submit:hover{
  box-shadow: 3px 3px 60px #101010 inset, 0px 3px 8px #000; 
@@ -913,7 +912,7 @@ color: #fff;
 }
 .reg-input{
     border: 1px solid #383838;
-    width: 280px;
+    width: 250px;
     height: 30px;
     background: rgba(32, 32, 32, 0.38);
     text-align: center;
@@ -923,6 +922,23 @@ color: #fff;
     border-radius: 5px;
     margin-bottom: 5px;
 }
+select {
+    border: 1px solid #383838;
+    width: 250px;
+    height: 30px;
+    background: rgba(32, 32, 32, 0.38);
+    text-align: left;
+    color: #d47373;
+    float: left;
+    margin-left: 4px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+	box-sizing:content-box;
+	-ms-box-sizing:content-box;
+	-moz-box-sizing:content-box;
+	-webkit-box-sizing:content-box;
+}
+
 .reg-input::-webkit-input-placeholder 		{color: #383838;}
 .reg-input:-moz-placeholder 					{color: #383838;}
 .reg-input::-moz-placeholder 				{color: #383838;}
