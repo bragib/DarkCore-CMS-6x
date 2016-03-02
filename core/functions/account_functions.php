@@ -61,6 +61,35 @@ function get_avatar_byid($id){
 		}
 	$con->close();
 	}
+
+function get_acc_info_by_user($username){
+	global $DB_HOST,$DB_USERNAME,$DB_PASSWORD,$DB_AUTH;
+	$con = connect($DB_HOST,$DB_USERNAME,$DB_PASSWORD);
+	$sql = "SELECT username, email, reg_mail, joindate, last_ip, last_login, online, expansion, vp, dp, rank FROM ".$DB_AUTH.".account WHERE username='".$username."'";
+	$i=1;
+	if ($stmt = $con->prepare($sql)){
+		$stmt->execute();
+		$stmt->bind_result($_username,$_email,$_reg_mail,$_joindate,$_last_ip,$_last_login,$_online,$_expansion,$_vp,$_dp,$_rank);
+		while ($stmt->fetch()) {
+			$account[$i] = array(
+				'username'=> $_username,
+				'email'=> $_email,
+				'reg_mail'=> $_reg_mail,
+				'joindate'=> $_joindate,
+				'last_ip'=> $_last_ip,
+				'last_login'=> $_last_login,
+				'online'=> $_online,
+				'expansion'=> $_expansion,
+				'vp'=> $_vp,
+				'dp'=> $_dp,
+				'rank'=> $_rank);
+		$i++;
+		}
+		$stmt->close();
+	}
+	return $account;
+	$con->close();
+}
 	
 class account {
 	public $CustomRank;      public $failed_logins;     public $mutereason;      public $country;

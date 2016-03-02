@@ -1,6 +1,6 @@
 <?php define('DarkCoreCMS', TRUE);
 	include 'header.php';?>
-	<title>GamingZeta - <?php echo ucwords( str_ireplace(array('-', '.php'), array(' ', ''), basename($_SERVER['PHP_SELF']) ) )?></title>
+	<title><?php echo $websiteTitle; ?> - <?php echo ucwords( str_ireplace(array('-', '.php'), array(' ', ''), basename($_SERVER['PHP_SELF']) ) )?></title>
 </head>
 <body>
 <?php if (!isset($_SESSION['usr'])) { ?>

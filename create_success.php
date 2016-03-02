@@ -1,16 +1,9 @@
-<?php define('DarkCoreCMS', TRUE); include 'header.php'; if (isset($_SESSION['usr'])) { $user_prw = $_SESSION['usr'];}
-require_once 'core/config.php';
-require_once 'core/functions/global_functions.php';
-require_once 'core/functions/realm_functions.php';
-require_once 'core/functions/bugtracker.php';
-require_once 'core/functions/account_functions.php';
-require_once 'core/functions/vote_functions.php';
-require_once 'core/functions/board_functions.php';
+<?php define('DarkCoreCMS', TRUE); include 'header.php';
+if (isset($_SESSION['usr'])) { $user_prw = $_SESSION['usr'];}
 $user_account = new account;
 ?>
 	<title><?php echo $websiteTitle; ?></title>
-	<script type="text/javascript"
-		src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 </head>
 <body>
 	<div id="fb-root"></div>

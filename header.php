@@ -2,12 +2,14 @@
 	session_start();
 	}
 	require_once 'core/config.php';
+	require_once 'core/functions/account_functions.php';
+	require_once 'core/functions/armory_functions.php'; 
+	require_once 'core/functions/board_functions.php';
+	require_once 'core/functions/bugtracker.php';
+	require_once 'core/functions/character_functions.php';
 	require_once 'core/functions/global_functions.php';
 	require_once 'core/functions/realm_functions.php';
-	require_once 'core/functions/bugtracker.php';
-	require_once 'core/functions/account_functions.php';
 	require_once 'core/functions/vote_functions.php';
-	require_once 'core/functions/board_functions.php';
 	
 	if(isset($_GET['lang']))
 	{
@@ -40,4 +42,5 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css" title="Default Styles" media="screen">	
 	<link rel="stylesheet" type="text/css" href="css/armory.css" title="Default Styles" media="screen">	
 	<script type="text/javascript" src="js/skinnytip.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
