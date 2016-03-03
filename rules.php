@@ -4,6 +4,9 @@
 <body>
 <div id='header'></div>
 	<?php include 'menu.php';?>
+	<div id='navigate-block'>
+		<a class='navigate-item' href='index'>Home</a>-<a class='navigate-item' href='rules'>Rules</a>
+	</div>
 	<div id='content'>
 		<div id='content-wrapper'>
 			<div id='rules-body'>

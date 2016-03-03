@@ -21,6 +21,9 @@ $user_account = new account;
 	<?php include 'menu.php';
         if (isset($_GET["errlogin"])){
     ?>
+	<div id='navigate-block'>
+		<a class='navigate-item' href='index'>Account create success</a>
+	</div>
     <div id="notify">There was an error when logging in recheck your account and password corectly acc and pass are case sensitive</div>
     <?php } ?>
 	<div id='content'>

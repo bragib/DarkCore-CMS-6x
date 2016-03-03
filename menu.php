@@ -1,5 +1,4 @@
 	<div id='menu'>
-		<center>
 		<div id='menu-block'>
 			<a class='menu-item' href='index'>HOME</a>
 			<a class='menu-item' href='armory'>ARMORY</a>
@@ -10,7 +9,7 @@
 					echo "<a class='menu-item' href='user'>ACCOUNT PANEL</a>";
 					echo "<a class='menu-item' href='core/logout'>LOGOUT</a>";
 			 } else
+					echo "<a class='menu-item' href='login'>LOGIN</a>";
 					echo "<a class='menu-item' href='register'>REGISTER</a>"; ?>
 		</div>
-		</center>
 	</div>

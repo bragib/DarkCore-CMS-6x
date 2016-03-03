@@ -11,7 +11,9 @@
 		$realminfo = new realm;
 		$realminfo->get_all($realmid);
 		?>
-		
+	<div id='navigate-block'>
+		<a class='navigate-item' href='index'>Home</a>-<a class='navigate-item' href='realm'>Realm infos</a>
+	</div>
 	<div id='content'>
 		<div id='content-wrapper'>
 			<div id='realm-frame'>

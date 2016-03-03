@@ -9,6 +9,9 @@
 		$charinfo = new character;
 		$charinfo->construct($character);
 		$charinfo->get_char_equipment($charinfo->charguid);?>
+	<div id='navigate-block'>
+		<a class='navigate-item' href='index'>Home</a>-<a class='navigate-item' href='armory'>Characters</a>
+	</div>
 	<div id='content'>
 		<div id='character-left'>
 			<div class='left-character-panel'>

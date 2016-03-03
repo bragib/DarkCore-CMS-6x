@@ -23,6 +23,9 @@ $user_account = new account;
     ?>
     <div id="notify">There was an error when logging in recheck your account and password corectly acc and pass are case sensitive</div>
     <?php } ?>
+	<div id='navigate-block'>
+		<a class='navigate-item' href='index'>Home</a>
+	</div>
 	<div id='content'>
 		<div id='index-content-left'>
 			<div id='main-tools'>
@@ -30,9 +33,9 @@ $user_account = new account;
                     <h1 class="main-tools-head-text"><?php echo $welcomeTitle; ?></h1>
                     <div class="main-tools-description"><?php echo $welcomeDescription; ?></div>
                     <ul>
-                        <li class="main-tools-li"><a href="armory">ARMORY</a></li>
-                        <li class="main-tools-li"><a href="guides">GUIDES & DOWNLOADS</a></li>
-                        <li class="main-tools-li"><a href="rules">BUGTRACKER</a></li>
+                        <li class="main-tools-li"><a href="register">REGISTER</a></li>
+                        <li class="main-tools-li"><a href="login">LOGIN</a></li>
+                        <li class="main-tools-li"><a href="guide">GUIDES & DOWNLOADS</a></li>
                     </ul>
 				</div>
 			</div>
@@ -74,7 +77,7 @@ $user_account = new account;
 			<div id='mediabox'>
 				<div class='mediabox-head-text'>MEDIA</div>
                 <div class="newsdivider"></div>
-                <iframe id="abc_frame" width="368" height="215" src="https://www.youtube.com/embed/iyQ0dXWmW6o" frameborder="0" allowfullscreen></iframe>
+                <iframe id="abc_frame" width="650" height="350" src="https://www.youtube.com/embed/iyQ0dXWmW6o" frameborder="0" allowfullscreen></iframe>
                 <div class="media-line">
                     <div class="media-thumb" onclick="getvideo('iyQ0dXWmW6o')">
                         <img src="http://img.youtube.com/vi/iyQ0dXWmW6o/2.jpg" width="50" height="50" />
@@ -109,38 +112,40 @@ $user_account = new account;
 					<form action='core/do_login.php' method='post'  autocomplete='off' enctype='multipart/form-data'>
                         <input style="display:none">
                         <input type="password" style="display:none">
-                        <input value=''  name='login_username' class='usrinput' placeholder="Username" autocomplete="off" type='text' />
-						<input value=''  name='login_password' class='usrinput' style="margin-top:5px;" placeholder="Password" autocomplete="off" type='password' />
+                        <input value='' name='login_username' class='usrinput' placeholder="Username" autocomplete="off" type='text' />
+						<input value='' name='login_password' class='usrinput' style="margin-top:5px;" placeholder="Password" autocomplete="off" type='password' />
 						<input value='Login' name='login' id='submit' type='submit'>
                         <a href='register' /><div class='submit-submenu'>Register</div></a>
                     </form>
 
-				<?php } else { $user_account->construct(ucfirst($user_prw));?>
+				<?php } else {
+					$account= get_acc_info_by_user($_SESSION['usr']);
+					for ($i=1;$i<=count($account);$i++) {?>
 					<div id='inforow' class="skinnytip" data-text="<div class='miniinfo'>This field represent your registrar email</div>">
 						<div class='inforowdesc'>Email:</div>
-						<div class='inforowresult'><?php echo $user_account->email; ?></div>
+						<div class='inforowresult'><?php echo $account[$i]['email']; ?></div>
 					</div>
 					<div id='inforow' class="skinnytip" data-text="<div class='miniinfo'>This field represent the last time when you logged ingame</div>">
 						<div class='inforowdesc'>Session:</div>
-						<div class='inforowresult'><?php echo $user_account->last_login; ?></div>
+						<div class='inforowresult'><?php echo $account[$i]['last_login']; ?></div>
 					</div>
 					<div id='inforow' class="skinnytip" data-text="<div class='miniinfo'>This field represent your last login IP</div>">
 						<div class='inforowdesc'>Last IP:</div>
-						<div class='inforowresult'><?php echo $user_account->last_ip; ?></div>
+						<div class='inforowresult'><?php echo $account[$i]['last_ip']; ?></div>
 					</div>
 					<div id='inforow' class="skinnytip" data-text="<div class='miniinfo'>This field represent your rank</div>">
 						<div class='inforowdesc'>Rank:</div>
-						<div class='inforowresult' style='color:#<?php echo namecolor($user_account->gmlevel,$user_account->VipLevel) ?>'><?php echo strtoupper(rankstring($user_account->gmlevel,$user_account->VipLevel)); ?></div>
+						<div class='inforowresult'><?php echo $account[$i]['rank']; ?></div>
 					</div>
 					<div id='inforow' class="skinnytip" data-text="<div class='miniinfo'>This represent your total Vote Points</div>">
 						<div class='inforowdesc'>Vote Points:</div>
-						<div class='inforowresult'><?php echo $user_account->vp; ?></div>
+						<div class='inforowresult'><?php echo $account[$i]['vp']; ?></div>
 					</div>
 					<div id='inforow' class="skinnytip" data-text="<div class='miniinfo'>This represent your total Donation Points</div>">
 						<div class='inforowdesc'>Donation Points:</div>
-						<div class='inforowresult'><?php echo $user_account->dp; ?></div>
+						<div class='inforowresult'><?php echo $account[$i]['dp']; ?></div>
 					</div>
-				<?php } ?>
+				<?php } } ?>
                     </div>
             </div>
             <div class="connectionguide"></div>

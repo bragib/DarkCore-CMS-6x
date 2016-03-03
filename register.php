@@ -10,6 +10,9 @@
 	 if (isset($_GET["regerror"])){
          get_reg_errors($_GET['regerror']);
     } ?>
+	<div id='navigate-block'>
+		<a class='navigate-item' href='index'>Home</a>-<a class='navigate-item' href='register'>Register</a>
+	</div>
 	</div>
 	<div id='content'>
 		<div id='index-content-left'>

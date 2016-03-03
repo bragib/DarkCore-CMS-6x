@@ -9,6 +9,9 @@
 	<div id='header'>
 	</div>
 	<?php include 'menu.php';?>
+	<div id='navigate-block'>
+		<a class='navigate-item' href='index'>Home</a>-<a class='navigate-item' href='armory'>Armory</a>
+	</div>
 	<div id='content'>
 		<div id='content-wrapper'>
 		<div id='crt-content'>All results are updated in real time</div>
