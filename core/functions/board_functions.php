@@ -63,19 +63,18 @@ class TopicsData{
     function get_last_topic($_forum_id){
         global $DB_HOST,$DB_USERNAME,$DB_PASSWORD,$DB_WEBSITE;
         $con = connect($DB_HOST,$DB_USERNAME,$DB_PASSWORD);
-        $sql = "SELECT `id`,`forum`,`title`,`body`,`autor`,`thumbnail`,`date` FROM ".$DB_WEBSITE.".`forum_topics` WHERE `forum`=? ORDER BY `id` DESC LIMIT 1";
+        $sql = "SELECT `id`,`forumId`,`title`,`body`,`autor`,`date` FROM ".$DB_WEBSITE.".`forum_topics` WHERE `forumId`=? ORDER BY `id` DESC LIMIT 1";
         if ($stmt = $con->prepare($sql)) {
             $stmt->bind_param('i',$_forum_id);
             $stmt->execute();
-            $stmt->bind_result($_id,$_forum,$_title,$_body,$_autor,$_thumbnail,$_date);
+            $stmt->bind_result($_id,$_forumId,$_title,$_body,$_autor,$_date);
             while($stmt->fetch()){
                 $this->last_topic = array(
                     'id' => $_id,
-                    'forum' => $_forum,
+                    'forumId' => $_forumId,
                     'title' => $_title,
                     'body' => $_body,
                     'autor' => $_autor,
-                    'thumbnail' => $_thumbnail,
                     'date' => $_date);
             }
             $stmt->close();
@@ -86,18 +85,17 @@ class TopicsData{
     function get_last_topic_index(){
         global $DB_HOST,$DB_USERNAME,$DB_PASSWORD,$DB_WEBSITE;
         $con = connect($DB_HOST,$DB_USERNAME,$DB_PASSWORD);
-        $sql = "SELECT `id`,`forum`,`title`,`body`,`autor`,`thumbnail`,`date` FROM ".$DB_WEBSITE.".`forum_topics` ORDER BY `id` DESC LIMIT 1";
+        $sql = "SELECT `id`,`forumId`,`title`,`body`,`autor`,`date` FROM ".$DB_WEBSITE.".`forum_topics` ORDER BY `id` DESC LIMIT 1";
         if ($stmt = $con->prepare($sql)) {
             $stmt->execute();
-            $stmt->bind_result($_id,$_forum,$_title,$_body,$_autor,$_thumbnail,$_date);
+            $stmt->bind_result($_id,$_forumId,$_title,$_body,$_autor,$_date);
             while($stmt->fetch()){
                 $this->last_topic_index = array(
                     'id' => $_id,
-                    'forum' => $_forum,
+                    'forumId' => $_forumId,
                     'title' => $_title,
                     'body' => $_body,
                     'autor' => $_autor,
-                    'thumbnail' => $_thumbnail,
                     'date' => $_date);
             }
             $stmt->close();
@@ -121,19 +119,18 @@ class TopicsData{
     function get_latest_topics_index(){
         global $DB_HOST,$DB_USERNAME,$DB_PASSWORD,$DB_WEBSITE;
         $con = connect($DB_HOST,$DB_USERNAME,$DB_PASSWORD);
-        $sql = "SELECT `id`,`forum`,`title`,`body`,`autor`,`thumbnail`,`date` FROM ".$DB_WEBSITE.".`forum_topics` ORDER BY `id` DESC LIMIT 5";
+        $sql = "SELECT `id`,`forumId`,`title`,`body`,`autor`,`date` FROM ".$DB_WEBSITE.".`forum_topics` ORDER BY `id` DESC LIMIT 5";
         $i=1;
         if ($stmt = $con->prepare($sql)) {
             $stmt->execute();
-            $stmt->bind_result($_id,$_forum,$_title,$_body,$_autor,$_thumbnail,$_date);
+            $stmt->bind_result($_id,$_forumId,$_title,$_body,$_autor,$_date);
             while($stmt->fetch()){
                 $this->latest_topics_index[$i] = array(
                     'id' => $_id,
-                    'forum' => $_forum,
+                    'forumId' => $_forumId,
                     'title' => $_title,
                     'body' => $_body,
                     'autor' => $_autor,
-                    'thumbnail' => $_thumbnail,
                     'date' => $_date);
                 $i++;
             }
@@ -144,7 +141,7 @@ class TopicsData{
     function total_topics_by_forum($_forum_id){
         global $DB_HOST,$DB_USERNAME,$DB_PASSWORD,$DB_WEBSITE;
         $con = connect($DB_HOST,$DB_USERNAME,$DB_PASSWORD);
-        $sql = "SELECT * FROM ".$DB_WEBSITE.".`forum_topics` WHERE `forum`=?";
+        $sql = "SELECT * FROM ".$DB_WEBSITE.".`forum_topics` WHERE `forumId`=?";
         if ($stmt = $con->prepare($sql)) {
             $stmt->bind_param('i',$_forum_id);
             $stmt->execute();
@@ -233,19 +230,18 @@ class ForumStats{
     function get_latest_topics(){
         global $DB_HOST,$DB_USERNAME,$DB_PASSWORD,$DB_WEBSITE;
         $con = connect($DB_HOST,$DB_USERNAME,$DB_PASSWORD);
-        $sql = "SELECT `id`,`forum`,`title`,`body`,`autor`,`thumbnail`,`date` FROM ".$DB_WEBSITE.".`forum_topics` ORDER BY `id` DESC LIMIT 5";
+        $sql = "SELECT `id`,`forumId`,`title`,`body`,`autor`,`date` FROM ".$DB_WEBSITE.".`forum_topics` ORDER BY `id` DESC LIMIT 5";
         $i=1;
         if ($stmt = $con->prepare($sql)) {
             $stmt->execute();
-            $stmt->bind_result($_id,$_forum,$_title,$_body,$_autor,$_thumbnail,$_date);
+            $stmt->bind_result($_id,$_forumId,$_title,$_body,$_autor,$_date);
             while($stmt->fetch()){
                 $this->latest_topics[$i] = array(
                     'id' => $_id,
-                    'forum' => $_forum,
+                    'forumId' => $_forumId,
                     'title' => $_title,
                     'body' => $_body,
                     'autor' => $_autor,
-                    'thumbnail' => $_thumbnail,
                     'date' => $_date);
                 $i++;
             }
@@ -278,19 +274,18 @@ class ForumStats{
     function get_topic_by_id($_topic_id){
         global $DB_HOST,$DB_USERNAME,$DB_PASSWORD,$DB_WEBSITE;
         $con = connect($DB_HOST,$DB_USERNAME,$DB_PASSWORD);
-        $sql = "SELECT `id`,`forum`,`title`,`body`,`autor`,`thumbnail`,`date` FROM ".$DB_WEBSITE.".`forum_topics` WHERE `id`=?";
+        $sql = "SELECT `id`,`forumId`,`title`,`body`,`autor`,`date` FROM ".$DB_WEBSITE.".`forum_topics` WHERE `id`=?";
         if ($stmt = $con->prepare($sql)) {
             $stmt->bind_param('i',$_topic_id);
             $stmt->execute();
-            $stmt->bind_result($_id,$_forum,$_title,$_body,$_autor,$_thumbnail,$_date);
+            $stmt->bind_result($_id,$_forumId,$_title,$_body,$_autor,$_date);
             while($stmt->fetch()){
                 $this->latest_posts_forum = array(
                     'id' => $_id,
-                    'forum' => $_forum,
+                    'forumId' => $_forumId,
                     'title' => $_title,
                     'body' => $_body,
                     'autor' => $_autor,
-                    'thumbnail' => $_thumbnail,
                     'date' => $_date);
             }
             $stmt->close();
@@ -333,19 +328,18 @@ class TopicData{
     function get_topics_by_id($topic_id){
         global $DB_HOST,$DB_USERNAME,$DB_PASSWORD,$DB_WEBSITE;
         $con = connect($DB_HOST,$DB_USERNAME,$DB_PASSWORD);
-        $sql = "SELECT `id`,`forum`,`title`,`body`,`autor`,`thumbnail`,`date` FROM ".$DB_WEBSITE.".`forum_topics` WHERE `id`=?";
+        $sql = "SELECT `id`,`forumId`,`title`,`body`,`autor`,`date` FROM ".$DB_WEBSITE.".`forum_topics` WHERE `id`=?";
         if ($stmt = $con->prepare($sql)) {
             $stmt->bind_param('i',$topic_id);
             $stmt->execute();
-            $stmt->bind_result($_id,$_forum,$_title,$_body,$_autor,$_thumbnail,$_date);
+            $stmt->bind_result($_id,$_forumId,$_title,$_body,$_autor,$_date);
             while($stmt->fetch()){
                 $this->topic = array(
                     'id' => $_id,
-                    'forum' => $_forum,
+                    'forumId' => $_forumId,
                     'title' => $_title,
                     'body' => $_body,
                     'autor' => $_autor,
-                    'thumbnail' => $_thumbnail,
                     'date' => $_date);
             }
             $stmt->close();
