@@ -8,7 +8,7 @@
 	if(isset($_GET['usrId'])) {
 	$usr = get_userinfo_by_id($_GET['usrId']); for ($i=1;$i<=count($usr);$i++) {?>
 	<div id='navigate-block'>
-		<a class='navigate-item' href='index'>Home</a>-<a class='navigate-item' href='user'><?php echo $usr[$i]['username'] ?>'s Informations</a>
+		<a class='navigate-item' href='index'>Home</a>-<a class='navigate-item'><?php echo $usr[$i]['username'] ?>'s Informations</a>
 	</div>
 	<div id='content'>
 		<div id='index-content-left'>
