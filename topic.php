@@ -52,7 +52,7 @@ if (isset($_GET['id'])){
                 <?php foreach($stats->latest_topics as $topics) {?>
                 <div class="right-info-latest">
                     <a href="topic.php?id=<?php echo $stats->latest_topics[$i]['id'];?>/<?php echo urlencode($stats->latest_topics[$i]['title']);?>"><div style="color:#A1E8B9;padding-top:5px;font-size:16px"><?php echo $stats->latest_topics[$i]['title']; ?></div></a>
-                    <a href="player?id=<?php echo $stats->latest_topics[$i]['autor']; ?>"><div style="color:#<?php echo namecolor(get_rank_byid($stats->latest_topics[$i]['autor'])); ?>;font-size:14px"><?php echo ucfirst(strtolower(get_username_byid($stats->latest_topics[$i]['autor']))); ?></div></a>
+                    <a href="player.php?usrId=<?php echo $stats->latest_topics[$i]['autor']; ?>"><div style="color:#<?php echo namecolor(get_rank_byid($stats->latest_topics[$i]['autor'])); ?>;font-size:14px"><?php echo ucfirst(strtolower(get_username_byid($stats->latest_topics[$i]['autor']))); ?></div></a>
                     <div style="color:#717B7A;font-size:12px"><?php echo $stats->latest_topics[$i]['date']; ?></div>
                 </div>
                 <?php $i++; } $i=1;?>
@@ -61,7 +61,7 @@ if (isset($_GET['id'])){
                 <?php foreach($stats->latest_posts as $posts) { $topicbyid = $stats->get_topic_by_id($stats->latest_posts[$i]['topic_id']);?>
                     <div class="right-info-latest">
                         <a href="topic.php?id=<?php echo $topicbyid['id']; ?>/<?php echo urlencode($topicbyid['title']);?>"><div style="color:#A1E8B9;padding-top:5px;font-size:16px"><?php echo $stats->latest_posts[$i]['body']; ?></div></a>
-                        <a href="player?id=<?php echo $stats->latest_posts[$i]['autor']; ?>"><div style="color:#<?php echo namecolor(get_rank_byid($stats->latest_posts[$i]['autor'])); ?>;font-size:14px"><?php echo ucfirst(strtolower(get_username_byid($stats->latest_posts[$i]['autor']))); ?></div></a>
+                        <a href="player.php?usrId=<?php echo $stats->latest_posts[$i]['autor']; ?>"><div style="color:#<?php echo namecolor(get_rank_byid($stats->latest_posts[$i]['autor'])); ?>;font-size:14px"><?php echo ucfirst(strtolower(get_username_byid($stats->latest_posts[$i]['autor']))); ?></div></a>
 
                         <div style="color:#717B7A;font-size:12px"><?php echo $stats->latest_posts[$i]['date']; ?></div>
                     </div>
@@ -72,7 +72,7 @@ if (isset($_GET['id'])){
                     <div class="statistics-label">Total Accounts:</div><div class="statistics-values"><?php echo $stats->total_accounts; ?></div>
                     <div class="statistics-label">Total Topics:</div><div class="statistics-values"><?php echo $stats->total_topics; ?></div>
                     <div class="statistics-label">Total Posts:</div><div class="statistics-values"><?php echo $stats->total_posts; ?></div>
-                    <div class="statistics-label">Newest Member:</div><a href="player?id=<?php echo $stats->last_member['id']; ?>"><div class="statistics-values" style="color: #<?php echo namecolor(get_rank_byid($stats->last_member['id'])); ?>;"><?php echo ucfirst(strtolower($stats->last_member['username'])); ?></div></a>
+                    <div class="statistics-label">Newest Member:</div><a href="player.php?usrId=<?php echo $stats->last_member['id']; ?>"><div class="statistics-values" style="color: #<?php echo namecolor(get_rank_byid($stats->last_member['id'])); ?>;"><?php echo ucfirst(strtolower($stats->last_member['username'])); ?></div></a>
                 </div>
             </div>
     </div>

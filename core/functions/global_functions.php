@@ -601,4 +601,48 @@ function int_to_string($time) {
 
 	return $time_str;
 }
+
+function get_username_by_id($usrId){
+	global $DB_HOST,$DB_USERNAME,$DB_PASSWORD,$DB_AUTH;
+	$con = connect($DB_HOST,$DB_USERNAME,$DB_PASSWORD);
+	$sql = "SELECT username FROM ".$DB_AUTH.".account WHERE id=?";
+	$i=1;
+	if ($stmt = $con->prepare($sql)) {
+		$stmt->bind_param("i",$usrId);
+		$stmt->execute();
+		$stmt->bind_result($_username);
+		while($stmt->fetch()){
+			$user[$i] = array(
+				'username' => $_username);
+			$i++;
+		}
+		$stmt->close();
+	}
+	return $user;
+	$con->close();
+}
+function get_userinfo_by_id($usrId){
+	global $DB_HOST,$DB_USERNAME,$DB_PASSWORD,$DB_AUTH;
+	$con = connect($DB_HOST,$DB_USERNAME,$DB_PASSWORD);
+	$sql = "SELECT username, joindate, last_login, online, rank FROM ".$DB_AUTH.".account WHERE id=?";
+	$i=1;
+	if ($stmt = $con->prepare($sql)) {
+		$stmt->bind_param("i",$usrId);
+		$stmt->execute();
+		$stmt->bind_result($_username,$_joindate,$_last_login,$_online,$_rank);
+		while($stmt->fetch()){
+			$users[$i] = array(
+				'username' => $_username,
+				'joindate' => $_joindate,
+				'last_login' => $_last_login,
+				'online' => $_online,
+				'rank' => $_rank);
+			$i++;
+		}
+		$stmt->close();
+	}
+	return $users;
+	$con->close();
+}
+
 ?>
