@@ -41,6 +41,7 @@
     <meta name="keywords" content="Gaming,Website,6.2.3,Warlords of Draenor,MOP,WoD">
 	<link rel="stylesheet" type="text/css" href="css/style.css" title="Default Styles" media="screen">	
 	<link rel="stylesheet" type="text/css" href="css/armory.css" title="Default Styles" media="screen">	
+    <link rel="stylesheet" type="text/css" href="css/board.css" title="Default Styles" media="screen" />
 	<script type="text/javascript" src="js/skinnytip.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 

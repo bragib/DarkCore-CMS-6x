@@ -2082,3 +2082,87 @@ box-shadow: 3px 3px 60px #101010 inset, 0px 3px 8px #000;
 	color: #CD853F;
     font-weight: bold;
 }
+
+#topic-box{
+    margin: auto;
+    width: 660px;
+    border: 1px solid #272626;
+    background: #171616;
+    margin-bottom: 25px;
+    color: #b0b0b0;
+    border-radius: 5px;
+}
+#topicbox-left{
+    width: 620px;
+    display: inline-block;
+    vertical-align: top;
+    background: #181818;
+    color: #6CA29B;
+    padding: 10px;
+    margin-left: 10px;
+    margin-bottom: 50px;
+    border: 1px solid #383838;
+}
+.topic-head-text-nobg{
+    overflow: hidden;
+    color: #d47373;
+    min-height: 18px;
+    font-size: 20px;
+    text-shadow: 3px 3px 8px #000;
+    padding: 10px;
+    border-radius: 3px;
+}
+.topic-box-info{
+    display: inline-block;
+    vertical-align: top;
+    margin-left:15px;
+}
+.topicbox-info-line{
+    margin-bottom:3px;
+}
+.topicbox-line-light{
+    text-align:left;
+    display: inline-block;
+    vertical-align: top;
+    color:#A1E8B9;
+}
+.topic-line{
+    width: 648px;
+    height: 55px;
+    margin: auto;
+    margin-left: 6px;
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 10px;
+    background: url("../images/forum/forumbg.jpg");
+    border-radius:3px;
+}
+.topic-icon-place{
+    width: 65px;
+    height: 50px;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    padding-top: 5px;
+}
+.topic-icon{
+    width: 45px;
+    height: 45px;
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 360px;
+    box-shadow: 3px 3px 60px #282828 inset, 0px 3px 8px #000;
+}
+.t-title-desc{
+    width: 300px;
+    height: 55px;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 10px;
+}
+.t-title{
+    color: #578C84;
+    font-size: 18px;
+    padding-top: 5px;
+}
+.t-desc{color:#A3B9B6;font-size:14px;}
