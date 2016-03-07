@@ -8,8 +8,9 @@
 					echo "<a class='menu-item' href='bugtracker'>BUGTRACKER <label style='font-size:10px;color:lime;'>alpha</label></a>";
 					echo "<a class='menu-item' href='user'>ACCOUNT PANEL</a>";
 					echo "<a class='menu-item' href='core/logout'>LOGOUT</a>";
-			 } else
+			 } else{
 					echo "<a class='menu-item' href='login'>LOGIN</a>";
-					echo "<a class='menu-item' href='register'>REGISTER</a>"; ?>
+					echo "<a class='menu-item' href='register'>REGISTER</a>"; 
+					}?>
 		</div>
 	</div>
