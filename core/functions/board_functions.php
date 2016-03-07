@@ -52,6 +52,54 @@ class ForumsData{
     }
 }
 
+function get_category_by_id($cat_id){
+	global $DB_HOST,$DB_USERNAME,$DB_PASSWORD,$DB_WEBSITE;
+	$con = connect($DB_HOST,$DB_USERNAME,$DB_PASSWORD);
+	$sql = "SELECT `category`,`title`,`description`,`icon` FROM ".$DB_WEBSITE.".`forum_forums` WHERE `id`=?";
+	$i=1;
+	if ($stmt = $con->prepare($sql)) {
+		$stmt->bind_param('i',$cat_id);
+		$stmt->execute();
+		$stmt->bind_result($_category,$_title,$_description,$_icon);
+		while($stmt->fetch()){
+			$forums[$i] = array(
+				'category' => $_category,
+				'title' => $_title,
+				'description' => $_description,
+				'icon' => $_icon);
+		}
+		$stmt->close();
+	}
+	return $forums;
+	$con->close();
+}
+
+function get_all_posts_by_forum_id($forum_id){
+	global $DB_HOST,$DB_USERNAME,$DB_PASSWORD,$DB_WEBSITE;
+	$con = connect($DB_HOST,$DB_USERNAME,$DB_PASSWORD);
+	$sql = "SELECT * FROM ".$DB_WEBSITE.".`forum_topics` WHERE `forumId`=? ORDER BY `id` ASC";
+	$i=1;
+	if ($stmt = $con->prepare($sql)) {
+		$stmt->bind_param('i',$forum_id);
+		$stmt->execute();
+		$stmt->bind_result($_id,$_forumId,$_title,$_body,$_autor,$_date,$_status);
+		while($stmt->fetch()){
+			$fposts[$i] = array(
+				'id' => $_id,
+				'forumId' => $_forumId,
+				'title' => $_title,
+				'body' => $_body,
+				'autor' => $_autor,
+				'date' => $_date,
+				'status' => $_status);
+			$i++;
+		}
+		$stmt->close();
+	}
+	return $fposts;
+	$con->close();
+}
+
 class TopicsData{
     public $topics = array();
     public $last_topic = array();
