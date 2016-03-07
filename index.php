@@ -35,7 +35,7 @@ $user_account = new account;
                     <ul>
                         <li class="main-tools-li"><a href="register">REGISTER</a></li>
                         <li class="main-tools-li"><a href="login">LOGIN</a></li>
-                        <li class="main-tools-li"><a href="guide">GUIDES & DOWNLOADS</a></li>
+                        <li class="main-tools-li"><a href="guides">GUIDES & DOWNLOADS</a></li>
                     </ul>
 				</div>
 			</div>
