@@ -3,11 +3,11 @@
 	}
 	require_once 'core/config.php';
 	require_once 'core/functions/account_functions.php';
-	require_once 'core/functions/armory_functions.php'; 
 	require_once 'core/functions/board_functions.php';
 	require_once 'core/functions/bugtracker.php';
 	require_once 'core/functions/character_functions.php';
 	require_once 'core/functions/global_functions.php';
+	require_once 'core/functions/store_functions.php';
 	require_once 'core/functions/realm_functions.php';
 	require_once 'core/functions/vote_functions.php';
 	
