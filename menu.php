@@ -1,7 +1,8 @@
 	<div id='menu'>
 		<div id='menu-block'>
 			<a class='menu-item' href='index'>HOME</a>
-			<a class='menu-item' href='armory'>ARMORY</a>
+			<?php if (isset($_SESSION['usr'])){
+			echo "<a class='menu-item' href='store'>STORE <label style='font-size:10px;color:lime;'>alpha</label></a>"; } ?>
 			<a class='menu-item' href='guides'>GUIDES & DOWNLOADS</a>
 			<a class='menu-item' href='forum'>FORUM <label style="font-size:10px;color:lime;">alpha</label></a>
 			<?php if (isset($_SESSION['usr'])){

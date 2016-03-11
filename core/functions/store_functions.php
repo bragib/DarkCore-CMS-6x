@@ -22,5 +22,58 @@ function get_item_store(){
 	return $store;
 	$con->close();
 }
-	
+
+function get_order_store_by_user_id($id){
+	global $DB_HOST,$DB_USERNAME,$DB_PASSWORD,$DB_WEBSITE;
+	$con = connect($DB_HOST,$DB_USERNAME,$DB_PASSWORD);
+	$sql = "SELECT * FROM ".$DB_WEBSITE.".store_orders WHERE acc_id=? ORDER BY order_id DESC LIMIT 3";
+	$i=1;
+	if ($stmt = $con->prepare($sql)){
+		$stmt->bind_param('i', $id);
+		$stmt->execute();
+		$stmt->bind_result($_order_id,$_acc_id,$_username,$_char_id,$_char_name,$_item_id,$_item_name,$_date);
+		while ($stmt->fetch()) {
+			$getOrderStore[$i] = array(
+				'order_id'=> $_order_id,
+				'acc_id'=> $_acc_id,
+				'username'=> $_username,
+				'char_id'=> $_char_id,
+				'char_name'=> $_char_name,
+				'item_id'=> $_item_id,
+				'item_name'=> $_item_name,
+				'date'=> $_date);
+		$i++;
+		}
+		$stmt->close();
+	}
+	return $getOrderStore;
+	$con->close();
+}
+
+function get_all_order_store_by_user_id($id){
+	global $DB_HOST,$DB_USERNAME,$DB_PASSWORD,$DB_WEBSITE;
+	$con = connect($DB_HOST,$DB_USERNAME,$DB_PASSWORD);
+	$sql = "SELECT * FROM ".$DB_WEBSITE.".store_orders WHERE acc_id=? ORDER BY order_id DESC";
+	$i=1;
+	if ($stmt = $con->prepare($sql)){
+		$stmt->bind_param('i', $id);
+		$stmt->execute();
+		$stmt->bind_result($_order_id,$_acc_id,$_username,$_char_id,$_char_name,$_item_id,$_item_name,$_date);
+		while ($stmt->fetch()) {
+			$getAllOrderStore[$i] = array(
+				'order_id'=> $_order_id,
+				'acc_id'=> $_acc_id,
+				'username'=> $_username,
+				'char_id'=> $_char_id,
+				'char_name'=> $_char_name,
+				'item_id'=> $_item_id,
+				'item_name'=> $_item_name,
+				'date'=> $_date);
+		$i++;
+		}
+		$stmt->close();
+	}
+	return $getAllOrderStore;
+	$con->close();
+}
 ?>

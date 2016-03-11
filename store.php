@@ -31,9 +31,14 @@
             <div class='store-info'>
                 <div class='store-info-head-text'>MY LAST 3 ORDERS</div>
                 <div class="newsdivider"></div>
+				<?php $accId = get_acc_info_by_user($_SESSION['usr']); for($j=1;$j<=count($accId);$j++){
+				$findOrder = get_order_store_by_user_id($accId[$j]['id']); for($i=1;$i<=count($findOrder);$i++){
+				if($findOrder[$i]['order_id']>=1) {?>
                 <div class='loggedas'>
-					<div class='inforowdesc'>Order : 123 - itemnametest</div>
+					<div class='inforowdesc'>Order : <?php echo $findOrder[$i]['order_id']; ?> - <?php echo $findOrder[$i]['item_name']; ?></div>
                 </div>
+				<?php } else echo "<div class='loggedas'><div class='inforowdesc'>No order found for your account!</div></div>"; ?>
+				<?php } } ?>
             </div>
 			<?php } ?>
             <div class="connectionguide"></div>

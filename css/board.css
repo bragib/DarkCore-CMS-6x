@@ -423,17 +423,25 @@
     margin-top:10px;
 }
 #board-notify-frame{
-    width: 800px;
+    width: 700px;
     height: 150px;
+	display: inline-block;
     vertical-align: top;
     background: #4A5045;
     border-radius: 3px;
-    margin: auto;
-    margin-top: 25px;
-    margin-bottom: 25px;
+    margin-bottom: 5px;
     box-shadow: 3px 3px 60px #282828 inset, 0px 3px 8px #000;
     text-align:center;
 }
 #topic-frame{
-
+}
+.l-info-latest {
+    width: 160px;
+    height: 55px;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 6px;
+    color: #6AA29A;
+    text-align: left;
+    margin-left: 130px;
 }
