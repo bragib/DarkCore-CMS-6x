@@ -5,6 +5,7 @@ global $DB_HOST,$DB_USERNAME,$DB_PASSWORD,$DB_WEBSITE;
 	$sql = "SELECT * FROM ".$DB_WEBSITE.".bugtracker order by id DESC";
 	$result = mysqli_query($connection,$sql);
 	$i=1;
+	$bug = array();
 	while($row = mysqli_fetch_array($result)){
 	$bug[$i] = array(
 		'id' => $row['id'],
@@ -23,6 +24,7 @@ global $DB_HOST,$DB_USERNAME,$DB_PASSWORD,$DB_WEBSITE;
 	$sql = "SELECT * FROM ".$DB_WEBSITE.".bugtracker order by id DESC limit 5";
 	$result = mysqli_query($connection,$sql);
 	$i=1;
+	$bug = array();
 	while($row = mysqli_fetch_array($result)){
 	$bug[$i] = array(
 		'id' => $row['id'],
@@ -40,6 +42,7 @@ global $DB_HOST,$DB_USERNAME,$DB_PASSWORD,$DB_WEBSITE;
 	$connection = connect($DB_HOST,$DB_USERNAME,$DB_PASSWORD);
 	$sql = "SELECT * FROM ".$DB_WEBSITE.".bugtracker where id=".$id;
 	$result = mysqli_query($connection,$sql);
+	$bug = array();
 	while($row = mysqli_fetch_array($result)){
 	$bug = array(
 		'id' => $row['id'],

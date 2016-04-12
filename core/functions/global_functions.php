@@ -109,6 +109,7 @@ global $DB_HOST,$DB_USERNAME,$DB_PASSWORD,$DB_WEBSITE;
 	$con = connect($DB_HOST,$DB_USERNAME,$DB_PASSWORD);
 	$sql = "SELECT id,autor,body,title,thumbnail,header,date FROM ".$DB_WEBSITE.".news order by id DESC limit 5";
 	$i=1;
+	$news = array();
 	if ($stmt = $con->prepare($sql)) {
 		$stmt->execute();
 		$stmt->bind_result($_id,$_autor,$_body,$_title,$_thumbnail,$_header,$_date);
@@ -182,6 +183,7 @@ function get_news_comments($news_id,$page,$limit){
 	$con = connect($DB_HOST,$DB_USERNAME,$DB_PASSWORD);
 	$sql = "SELECT id,news_id,autor,body,date FROM ".$DB_WEBSITE.".news_comments where news_id=? order by id DESC limit ?,?";
 	$i=1;
+	$comms = array();
 	if ($stmt = $con->prepare($sql)){
 		$stmt->bind_param("iii",$news_id,$from,$limit);
 		$stmt->execute();
@@ -400,6 +402,7 @@ function get_rules($type){
 	$con = connect($DB_HOST,$DB_USERNAME,$DB_PASSWORD);
 	$sql = "SELECT id,body,type FROM ".$DB_WEBSITE.".`rules` where type=?";
 	$i=1;
+	$rules = array();
 	if ($stmt = $con->prepare($sql)){
 		$stmt->bind_param("i",$type);
 		$stmt->execute();
@@ -607,6 +610,7 @@ function get_username_by_id($usrId){
 	$con = connect($DB_HOST,$DB_USERNAME,$DB_PASSWORD);
 	$sql = "SELECT username FROM ".$DB_AUTH.".account WHERE id=?";
 	$i=1;
+	$user = array();
 	if ($stmt = $con->prepare($sql)) {
 		$stmt->bind_param("i",$usrId);
 		$stmt->execute();
@@ -626,6 +630,7 @@ function get_userinfo_by_id($usrId){
 	$con = connect($DB_HOST,$DB_USERNAME,$DB_PASSWORD);
 	$sql = "SELECT username, joindate, last_login, online, rank FROM ".$DB_AUTH.".account WHERE id=?";
 	$i=1;
+	$users = array();
 	if ($stmt = $con->prepare($sql)) {
 		$stmt->bind_param("i",$usrId);
 		$stmt->execute();

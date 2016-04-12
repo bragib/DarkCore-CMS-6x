@@ -57,6 +57,7 @@ function get_category_by_id($cat_id){
 	$con = connect($DB_HOST,$DB_USERNAME,$DB_PASSWORD);
 	$sql = "SELECT `category`,`title`,`description`,`icon` FROM ".$DB_WEBSITE.".`forum_forums` WHERE `id`=?";
 	$i=1;
+	$forums = array();
 	if ($stmt = $con->prepare($sql)) {
 		$stmt->bind_param('i',$cat_id);
 		$stmt->execute();
@@ -79,6 +80,7 @@ function get_all_posts_by_forum_id($forum_id){
 	$con = connect($DB_HOST,$DB_USERNAME,$DB_PASSWORD);
 	$sql = "SELECT * FROM ".$DB_WEBSITE.".`forum_topics` WHERE `forumId`=? ORDER BY `id` ASC";
 	$i=1;
+	$fposts = array();
 	if ($stmt = $con->prepare($sql)) {
 		$stmt->bind_param('i',$forum_id);
 		$stmt->execute();

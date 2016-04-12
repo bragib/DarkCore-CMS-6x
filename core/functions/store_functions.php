@@ -3,7 +3,8 @@ function get_item_store(){
 	global $DB_HOST,$DB_USERNAME,$DB_PASSWORD,$DB_WEBSITE;
 	$con = connect($DB_HOST,$DB_USERNAME,$DB_PASSWORD);
 	$sql = "SELECT * FROM ".$DB_WEBSITE.".store_item";
-	$i=1;
+	$i=1;4
+	$store = array(); 
 	if ($stmt = $con->prepare($sql)){
 		$stmt->execute();
 		$stmt->bind_result($_id,$_item_id,$_name,$_vp_price,$_dp_price,$_dispo);
@@ -28,6 +29,7 @@ function get_order_store_by_user_id($id){
 	$con = connect($DB_HOST,$DB_USERNAME,$DB_PASSWORD);
 	$sql = "SELECT * FROM ".$DB_WEBSITE.".store_orders WHERE acc_id=? ORDER BY order_id DESC LIMIT 3";
 	$i=1;
+	$getOrderStore = array(); 
 	if ($stmt = $con->prepare($sql)){
 		$stmt->bind_param('i', $id);
 		$stmt->execute();
@@ -55,6 +57,7 @@ function get_all_order_store_by_user_id($id){
 	$con = connect($DB_HOST,$DB_USERNAME,$DB_PASSWORD);
 	$sql = "SELECT * FROM ".$DB_WEBSITE.".store_orders WHERE acc_id=? ORDER BY order_id DESC";
 	$i=1;
+	$getAllOrderStore = array(); 
 	if ($stmt = $con->prepare($sql)){
 		$stmt->bind_param('i', $id);
 		$stmt->execute();
