@@ -3,7 +3,7 @@ function get_item_store(){
 	global $DB_HOST,$DB_USERNAME,$DB_PASSWORD,$DB_WEBSITE;
 	$con = connect($DB_HOST,$DB_USERNAME,$DB_PASSWORD);
 	$sql = "SELECT * FROM ".$DB_WEBSITE.".store_item";
-	$i=1;4
+	$i=1;4;
 	$store = array(); 
 	if ($stmt = $con->prepare($sql)){
 		$stmt->execute();
