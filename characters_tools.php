@@ -7,9 +7,6 @@
 	<div id='header'>
 	</div>
 	<?php include 'menu.php';?>
-	<div id='navigate-block'>
-		<a class='navigate-item' href='index.php'>Главная</a>-<a class='navigate-item' href='characters_tools'>Characters tools</a>
-	</div>
 	<div id='content'>
 		<div id='index-content-left'>
 			<div class='lastnews-head-text'>Characters Tools Panel</div>

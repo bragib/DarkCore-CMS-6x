@@ -23,9 +23,6 @@ $user_account = new account;
     ?>
     <div id="notify">There was an error when logging in recheck your account and password corectly acc and pass are case sensitive</div>
     <?php } ?>
-	<div id='navigate-block'>
-		<a class='navigate-item' href='index'>Главная</a>
-	</div>
 	<div id='content'>
 		<div id='index-content-left'>
 			<div id='main-tools'>
@@ -77,7 +74,7 @@ $user_account = new account;
 			<div id='mediabox'>
 				<div class='mediabox-head-text'>Видео</div>
                 <div class="newsdivider"></div>
-                <iframe id="abc_frame" width="650" height="350" src="https://www.youtube.com/embed/iyQ0dXWmW6o" frameborder="0" allowfullscreen></iframe>
+                <iframe id="abc_frame" width="368" height="215" src="https://www.youtube.com/embed/iyQ0dXWmW6o" frameborder="0" allowfullscreen></iframe>
                 <div class="media-line">
                     <div class="media-thumb" onclick="getvideo('iyQ0dXWmW6o')">
                         <img src="http://img.youtube.com/vi/iyQ0dXWmW6o/2.jpg" width="50" height="50" />
@@ -90,17 +87,13 @@ $user_account = new account;
             <div id='secondary-box'>
                 <div class='mediabox-head-text'>Соц.сети</div>
                 <div class="newsdivider"></div>
-                <div class="fb-page" data-href="https://www.facebook.com/GamingZeta" data-width="288" data-height="300" data-hide-cover="false" data-show-facepile="true" data-show-posts="false">
-                    <div class="fb-xfbml-parse-ignore">
-                        <blockquote cite="https://www.facebook.com/GamingZeta">
-                            <a href="https://www.facebook.com/GamingZeta">GamingZeta</a>
-                        </blockquote>
-                    </div>
-                </div>
-                <div class="milestone-line">
-                    Next Milestone: <label style="color:#5BD0B0;">750</label> Likes Reward: <label style="color:#5BD0B0;">3</label> DP <label style="color:#5BD0B0;">300</label> VP<br>
-                    Last Milestone: <label style="color:#5BD0B0;">700</label> Likes Reward: <label style="color:#5BD0B0;">500</label> VP<br>
-                </div>
+<script type="text/javascript" src="//vk.com/js/api/openapi.js?121"></script>
+
+<!-- VK Widget -->
+<div id="vk_groups"></div>
+<script type="text/javascript">
+VK.Widgets.Group("vk_groups", {mode: 0, width: "287", height: "283", color1: 'FFFFFF', color2: '2B587A', color3: '5B7FA6'}, 33385459);
+</script>
             </div>
 		</div>
         <div id='index-content-right'>

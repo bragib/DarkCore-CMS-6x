@@ -10,9 +10,6 @@
 	$user_prw = $_SESSION['usr'];
 	$user_account->construct(ucfirst($user_prw));
 	?>
-	<div id='navigate-block'>
-		<a class='navigate-item' href='index'>Home</a>-<a class='navigate-item' href='user'>My account</a>
-	</div>
 	<div id='content'>
 		<div id='index-content-left'>
 			<div class='lastnews-head-text'><?php echo ucwords($user_prw) ?>'s User Administration Panel</div>

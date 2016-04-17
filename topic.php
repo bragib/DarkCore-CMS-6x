@@ -17,9 +17,6 @@ if (isset($_GET['id'])){
 <body>
 <div id='header'></div>
 <?php include 'menu.php';?>
-	<div id='navigate-block'>
-		<a class='navigate-item' href='index'>Home</a>-<a class='navigate-item' href='forum'>Forum</a>-<a class='navigate-item'><?php echo $thread_base['title']?></a>
-	</div>
     <div id='content'>
         <div id='content-wrapper'>
             <?php if ($error == 1){ ?>

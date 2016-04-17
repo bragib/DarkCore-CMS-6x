@@ -6,9 +6,6 @@
 	<div id='header'>
 	</div>
 	<?php include 'menu.php';?>
-	<div id='navigate-block'>
-		<a class='navigate-item' href='index'>Home</a>-<a class='navigate-item' href='user'>My account</a>-<a class='navigate-item'>Store</a>
-	</div>
 	<div id='content'>
 		<div id='index-content-left'>
 			<div class='lastnews-head-text'>Store</div>

@@ -12,9 +12,6 @@ MAIN AUTHOR: Darksoke & ProjectcoreDevs
 	<?php include 'menu.php';
 	 $text_parser = new BbParser;
 	?>
-	<div id='navigate-block'>
-		<a class='navigate-item' href='index.php'>Главная</a>-<a class='navigate-item' href='guides'>Guides</a>
-	</div>
 	<div id='content'>
 		<div id='content-wrapper'>
 			<div id='guides-body'>
