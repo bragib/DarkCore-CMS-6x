@@ -8,7 +8,7 @@
 	</div>
 	<?php include 'menu.php';?>
 	<div id='navigate-block'>
-		<a class='navigate-item' href='index'>Home</a>-<a class='navigate-item' href='characters_tools'>Characters tools</a>
+		<a class='navigate-item' href='index.php'>Главная</a>-<a class='navigate-item' href='characters_tools'>Characters tools</a>
 	</div>
 	<div id='content'>
 		<div id='index-content-left'>

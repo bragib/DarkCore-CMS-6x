@@ -10,7 +10,7 @@
 		$charinfo->construct($character);
 		$charinfo->get_char_equipment($charinfo->charguid);?>
 	<div id='navigate-block'>
-		<a class='navigate-item' href='index'>Home</a>-<a class='navigate-item' href='armory'>Characters</a>
+		<a class='navigate-item' href='index.php'>Главная</a>-<a class='navigate-item' href='armory'>Characters</a>
 	</div>
 	<div id='content'>
 		<div id='character-left'>

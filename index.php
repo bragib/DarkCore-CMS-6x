@@ -24,7 +24,7 @@ $user_account = new account;
     <div id="notify">There was an error when logging in recheck your account and password corectly acc and pass are case sensitive</div>
     <?php } ?>
 	<div id='navigate-block'>
-		<a class='navigate-item' href='index'>Home</a>
+		<a class='navigate-item' href='index'>Главная</a>
 	</div>
 	<div id='content'>
 		<div id='index-content-left'>
@@ -33,15 +33,15 @@ $user_account = new account;
                     <h1 class="main-tools-head-text"><?php echo $welcomeTitle; ?></h1>
                     <div class="main-tools-description"><?php echo $welcomeDescription; ?></div>
                     <ul>
-                        <li class="main-tools-li"><a href="register">REGISTER</a></li>
-                        <li class="main-tools-li"><a href="login">LOGIN</a></li>
-                        <li class="main-tools-li"><a href="guides">GUIDES & DOWNLOADS</a></li>
+                        <li class="main-tools-li"><a href="register.php">Регистрация</a></li>
+                        <li class="main-tools-li"><a href="login.php">Логин</a></li>
+                        <li class="main-tools-li"><a href="guides.php">Начать играть</a></li>
                     </ul>
 				</div>
 			</div>
 			<div id='lastnews'>
 			<?php $data_news = new TopicsData; $data_news->construct_index()?>
-				<div class='lastnews-head-text'>LATEST NEWS & ANNOUNCEMENTS</div>
+				<div class='lastnews-head-text'>Новости</div>
                 <div class="newsdivider"></div>
 				<div class='newsthumb'>
 					<div class='newsthumbicon'><img src='<?php echo get_avatar_byid($data_news->last_topic_index['autor']);?>' alt='<?php echo $data_news->last_topic_index['title'];?>' width="100%" height="100%"/></div>
@@ -50,7 +50,7 @@ $user_account = new account;
 						<div class='newsthumbresult'>&emsp;&emsp;<?php echo strip_tags(substr($data_news->last_topic_index['body'], 0, 300)); ?>...</div>
 						<div class='newsthumbbutton'>
 							<div class='thb-left'>
-								<label style='color:#72BF8B;'>By</label> <a href="../player?id=<?php echo $data_news->last_topic_index['autor']; ?>"><label style='font-size:14px !important;color:#<?php echo namecolor(get_rank_byid($data_news->last_topic_index['autor']),get_vip_byid($data_news->last_topic_index['autor'])); ?>;'><?php echo ucfirst(strtolower(get_username_byid($data_news->last_topic_index['autor']))); ?></label></a>
+								<label style='color:#72BF8B;'>By</label> <a href="../player.php?id=<?php echo $data_news->last_topic_index['autor']; ?>"><label style='font-size:14px !important;color:#<?php echo namecolor(get_rank_byid($data_news->last_topic_index['autor']),get_vip_byid($data_news->last_topic_index['autor'])); ?>;'><?php echo ucfirst(strtolower(get_username_byid($data_news->last_topic_index['autor']))); ?></label></a>
 								<label style='color:#72BF8B;'> in <?php echo substr($data_news->last_topic_index['date'],0,10); ?> </label>
 								<label style='color:#72BF8B;'>Comments to this post ( </label><label style='color:#42E2A8;'><?php echo total_comments($data_news->last_topic_index['id']); ?></label><label style='color:#72BF8B;'> ) </label>
 							</div>
@@ -63,7 +63,7 @@ $user_account = new account;
 				<div class='lastnews'>
                     <div class="brokenhover"></div>
                     <div class="lastnews-left">
-                        <a href="board/topic?id=<?php echo $data_news->latest_topics_index[$i]['id']; ?>&page=1/<?php echo $data_news->latest_topics_index[$i]['title']; ?>" class="lastnews-left-title">
+                        <a href="board/topic.php?id=<?php echo $data_news->latest_topics_index[$i]['id']; ?>&page=1/<?php echo $data_news->latest_topics_index[$i]['title']; ?>" class="lastnews-left-title">
                             <label class="skinnytip" data-text="<div class='miniinfo'>Read This</div>"><?php echo $data_news->latest_topics_index[$i]['title']?></label><br>
                             <label style="color:#3CA4CE;">Comments:</label> <?php echo total_comments($data_news->latest_topics_index[$i]['id'])?>
                         </a>
@@ -75,7 +75,7 @@ $user_account = new account;
 				<?php } ?>
 			</div>
 			<div id='mediabox'>
-				<div class='mediabox-head-text'>MEDIA</div>
+				<div class='mediabox-head-text'>Видео</div>
                 <div class="newsdivider"></div>
                 <iframe id="abc_frame" width="650" height="350" src="https://www.youtube.com/embed/iyQ0dXWmW6o" frameborder="0" allowfullscreen></iframe>
                 <div class="media-line">
@@ -88,7 +88,7 @@ $user_account = new account;
                 </div>
 			</div>
             <div id='secondary-box'>
-                <div class='mediabox-head-text'>SOCIAL MEDIA</div>
+                <div class='mediabox-head-text'>Соц.сети</div>
                 <div class="newsdivider"></div>
                 <div class="fb-page" data-href="https://www.facebook.com/GamingZeta" data-width="288" data-height="300" data-hide-cover="false" data-show-facepile="true" data-show-posts="false">
                     <div class="fb-xfbml-parse-ignore">
@@ -115,7 +115,7 @@ $user_account = new account;
                         <input value='' name='login_username' class='usrinput' placeholder="Username" autocomplete="off" type='text' />
 						<input value='' name='login_password' class='usrinput' style="margin-top:5px;" placeholder="Password" autocomplete="off" type='password' />
 						<input value='Login' name='login' id='submit' type='submit'>
-                        <a href='register' /><div class='submit-submenu'>Register</div></a>
+                        <a href='register.php' /><div class='submit-submenu'>Register</div></a>
                     </form>
 
 				<?php } else {
@@ -154,8 +154,8 @@ $user_account = new account;
             <?php $realminfo = new realm;
             $realminfo->construct(1);?>
             <div class="realmstat">
-                <a href="realm?id=<?php echo $realminfo->realm_id;?>">
-                    <img class="gversion" src='images/r-wod.png' height='19' alt='username'><div class="realmname"><a href="realm?realm=1/<?php echo urlencode($realminfo->rm_name); ?>" class="realmnamelink"><?php echo $realminfo->rm_name; ?></a></div>
+                <a href="realm.php?id=<?php echo $realminfo->realm_id;?>">
+                    <img class="gversion" src='images/r-wod.png' height='19' alt='username'><div class="realmname"><a href="realm.php?realm=1/<?php echo urlencode($realminfo->rm_name); ?>" class="realmnamelink"><?php echo $realminfo->rm_name; ?></a></div>
                     <div class="realminfo">Online: <?php echo $realminfo->total_online;?>/250
                     Alliance: <?php echo $realminfo->alliance;?> Horde: <?php echo $realminfo->horde;?></div>
                 </a>

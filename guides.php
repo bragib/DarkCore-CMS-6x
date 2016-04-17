@@ -13,7 +13,7 @@ MAIN AUTHOR: Darksoke & ProjectcoreDevs
 	 $text_parser = new BbParser;
 	?>
 	<div id='navigate-block'>
-		<a class='navigate-item' href='index'>Home</a>-<a class='navigate-item' href='guides'>Guides</a>
+		<a class='navigate-item' href='index.php'>Главная</a>-<a class='navigate-item' href='guides'>Guides</a>
 	</div>
 	<div id='content'>
 		<div id='content-wrapper'>
