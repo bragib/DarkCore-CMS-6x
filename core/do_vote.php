@@ -19,7 +19,7 @@ if (isset($_GET['user']) && isset($_GET['siteid'])){
 				add_points($user,$site_data['end_week_points']);
 			else 
 				add_points($user,$site_data['points']);
-			header('Location: ../user?done=1');
+			header('Location: ../user.php?done=1');
 		}
 		header('Location: '.$site_data['link']);
 	}

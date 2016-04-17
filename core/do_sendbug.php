@@ -7,11 +7,11 @@ if (isset($_POST['send-bugg'])){
 		$autor = $_POST['bugg-autor'];
 		$body = $_POST['bugg-body'];
 		postbug($autor,$body);
-		header("Location: ../bugtracker?errno=0");
+		header("Location: ../bugtracker.php?errno=0");
 	}
 	else
 	{
-		header("Location: ../bugtracker?errno=1");
+		header("Location: ../bugtracker.php?errno=1");
 	}
 }
 else 

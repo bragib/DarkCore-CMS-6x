@@ -11,10 +11,10 @@ if (isset($_POST['login_username']) && strlen($_POST['login_username'])>=3 && is
 	$check_result = login($username,$password);
 	if ($check_result == 'yes'){
 		$_SESSION['usr'] = $username;
-		header("Location: ../user");
+		header("Location: ../user.php");
 	}
 	else{
-		header("Location: ../index?errlogin=1");
+		header("Location: ../index.php?errlogin=1");
 	}
 }
 else 

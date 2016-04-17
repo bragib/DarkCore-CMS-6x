@@ -4,7 +4,7 @@
 	$_error= '';
 	if (!isset($_POST['Username']) || !isset($_POST['Email']) || !isset($_POST['Password']) || !isset($_POST['RepeatPassword']) || !isset($_POST['Expansion'])){
 		$_error = $_error . 'regerror=1&errtype=';
-		header('Location: ../register?'.$_error);
+		header('Location: ../register.php?'.$_error);
 	}
 	else {
 		if (check_user_exist($_POST['Username']) > 0)
@@ -20,7 +20,7 @@
 		if ($_POST['Password'] != $_POST['RepeatPassword'])
 			$_error = $_error . 'F';
 		if (strlen($_error) > 0)
-			header('Location: ../register?regerror=1'.$_error);
+			header('Location: ../register.php?regerror=1'.$_error);
 		else {
 			$username = $_POST['Username'];
 			$password = $_POST['Password'];

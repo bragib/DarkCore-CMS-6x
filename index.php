@@ -98,7 +98,7 @@ VK.Widgets.Group("vk_groups", {mode: 0, width: "287", height: "283", color1: 'FF
 		</div>
         <div id='index-content-right'>
             <div class='acclogin-info'>
-                <div class='acclogin-info-head-text'>ACCOUNT <?php if (isset($user_prw)){echo "- <a href='user' class='accnamelink'>".strtoupper($user_prw)."</a>";}; ?></div>
+                <div class='acclogin-info-head-text'>ACCOUNT <?php if (isset($user_prw)){echo "- <a href='user.php' class='accnamelink'>".strtoupper($user_prw)."</a>";}; ?></div>
                 <div class="newsdivider"></div>
                 <div class='loggedas'>
                 <?php if (!isset($_SESSION['usr'])) {?>
