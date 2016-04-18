@@ -21,7 +21,7 @@ return $con;
 /********************************************
 ************Website configuration************
 ********************************************/
-$websiteTitle = 'Website Beta Title'; // website title in global website
-$realmPortal = '127.0.0.1'; // it's your host name or ip for game connexion
+$websiteTitle = 'Draenor.Info'; // website title in global website
+$realmPortal = 'SET portal "wod.draenor.info"'; // it's your host name or ip for game connexion
 
 ?>

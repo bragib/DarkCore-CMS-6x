@@ -12,15 +12,15 @@
 	?>
 	<div id='content'>
 		<div id='index-content-left'>
-			<div class='lastnews-head-text'><?php echo ucwords($user_prw) ?>'s User Administration Panel</div>
+			<div class='lastnews-head-text'><?php echo ucwords($user_prw) ?>'s Личный кабинет</div>
 			<div class="newsdivider"></div>
 			<aside id="account_menu">
 				<article>
 					<ul id="account_menu">
-						<li><a href="characters_tools.php">Tools</a></li>
-						<li><a href="store.php">Store</a></li>
-						<li><a href="donate.php">Donation</a></li>
-						<li><a href="vote.php">Vote</a></li>
+						<li><a href="characters_tools.php">Инструменты</a></li>
+						<li><a href="store.php">Магазин</a></li>
+						<li><a href="donate.php">Пожертвование</a></li>
+						<li><a href="vote.php">Голосовать</a></li>
 					</ul>
 				</article>
 			</aside>
@@ -28,23 +28,23 @@
 			<?php $account = get_acc_info_by_user($_SESSION['usr']);
 			for ($j=1;$j<=count($account);$j++) {?>
 			<div id='user-box'>
-				<div class='lastnews-head-text-nobg' style="text-align:center;margin-bottom:5px;font-size:16px;">BASIC ACCOUNT INFORMATIONS</div>
+				<div class='lastnews-head-text-nobg' style="text-align:center;margin-bottom:5px;font-size:16px;">ОСНОВНЫЕ ДАННЫЕ УЧЕТНОЙ ЗАПИСИ</div>
 				<div id="userbox-left">
 					<div class="user-box-info">
 						<div class="userbox-info-line">
-							<div class="userbox-line-light-left">Email:</div>
+							<div class="userbox-line-light-left">Маил:</div>
 							<div class="userbox-line-light"><?php echo $account[$j]['email'];?></div>
 						</div>
 						<div class="userbox-info-line">
-							<div class="userbox-line-light-left">Join Date:</div>
+							<div class="userbox-line-light-left">Регистрация:</div>
 							<div class="userbox-line-light"><?php echo $account[$j]['joindate'];?></div>
 						</div>
 						<div class="userbox-info-line">
-							<div class="userbox-line-light-left">Last Log In:</div>
+							<div class="userbox-line-light-left">Последний Вход:</div>
 							<div class="userbox-line-light"><?php echo $account[$j]['last_login'];?></div>
 						</div>
 						<div class="userbox-info-line">
-							<div class="userbox-line-light-left">Last IP:</div>
+							<div class="userbox-line-light-left">Последний IP:</div>
 							<div class="userbox-line-light"><?php echo $account[$j]['last_ip'];?></div>
 						</div>
 						<div class="userbox-info-line">
@@ -89,7 +89,7 @@
 				<?php } else { echo '<div class="acc-storebox-info-line"><div class="acc-storebox-line-light-left">No orders found !</div></div>'; } }?>
 			</div>
 			<div id="user-box">
-				<div class='lastnews-head-text-nobg' style="text-align:center;margin-bottom:5px;font-size:16px;">VOTE PANEL</div>
+				<div class='lastnews-head-text-nobg' style="text-align:center;margin-bottom:5px;font-size:16px;">ПАНЕЛЬ ГОЛОСОВАНИЯ</div>
 				<div id='vote-links-box'>
 					<?php
 					$date = new DateTime();
@@ -145,14 +145,14 @@
             </div>
             <div class="connectionguide"></div>
             <div class="dpatches"></div>
-            <div class="rmlist">set portal <?php echo $realmPortal; ?></div>
+            <div class="rmlist"><?php echo $realmPortal; ?></div>
             <?php $realminfo = new realm;
             $realminfo->construct(1);?>
             <div class="realmstat">
                 <a href="realm?id=<?php echo $realminfo->realm_id;?>">
                     <img class="gversion" src='images/r-wod.png' height='19' alt='username'><div class="realmname"><a href="realm?realm=1/<?php echo urlencode($realminfo->rm_name); ?>" class="realmnamelink"><?php echo $realminfo->rm_name; ?></a></div>
-                    <div class="realminfo">Online: <?php echo $realminfo->total_online;?>/250
-                    Alliance: <?php echo $realminfo->alliance;?> Horde: <?php echo $realminfo->horde;?></div>
+                    <div class="realminfo">Онлайн: <?php echo $realminfo->total_online;?>
+                    Альянс: <?php echo $realminfo->alliance;?> Орда: <?php echo $realminfo->horde;?></div>
                 </a>
             </div>
         </div>

@@ -15,22 +15,22 @@
 		<div id='index-content-left'>
 			<div id='user-box'>
 				<div class='reg-alts-part-tree'>
-					<div class='user-head-text'>Register new account</div>
+					<div class='user-head-text'>Зарегистрировать новый аккаунт</div>
 					<div class="newsdivider"></div>
 					<center>
 						<form action="core/do_register.php" method="post" enctype="multipart/form-data">
 							<table>
 								<tr>
-									<td><input class='reg-input' type="text" name="Username" placeholder="Username*" required></td>
+									<td><input class='reg-input' type="text" name="Username" placeholder="Логин*" required></td>
 								</tr>
 								<tr>
-									<td><input class='reg-input' type="email" name="Email" placeholder="Email*" required></td>
+									<td><input class='reg-input' type="email" name="Email" placeholder="Маил*" required></td>
 								</tr>
 								<tr>
-									<td><input class='reg-input' type="password" name="Password" autocomplete='off' placeholder="Password*" required></td>
+									<td><input class='reg-input' type="password" name="Password" autocomplete='off' placeholder="Пароль*" required></td>
 								</tr>
 								<tr>
-									<td><input class='reg-input' type="password" name="RepeatPassword" autocomplete='off' placeholder="Repeat password*" required></td>
+									<td><input class='reg-input' type="password" name="RepeatPassword" autocomplete='off' placeholder="Повторите пароль*" required></td>
 								</tr>
 								<tr>
 									<td>
@@ -40,26 +40,26 @@
 									</td>
 								</tr>
 							</table>
-							<input id='user-submit' type='submit' name='regsubmit' 	value='Register new Account'>
+							<input id='user-submit' type='submit' name='regsubmit' 	value='ТЫККК'>
 						</form>
-						<span class='reg-mark'>All (*) marked fields are required !</span>
+						<span class='reg-mark'>Требуются все (*) отмечены поля !</span>
 					</center>
 				</div>
 			</div>
 		</div>
 		<div id='index-content-right'>
             <div class='acclogin-info'>
-                <div class='acclogin-info-head-text'>ACCOUNT <?php if (isset($user_prw)){echo "- <a href='user.php' class='accnamelink'>".strtoupper($user_prw)."</a>";}; ?></div>
+                <div class='acclogin-info-head-text'>Аккаунт <?php if (isset($user_prw)){echo "- <a href='user.php' class='accnamelink'>".strtoupper($user_prw)."</a>";}; ?></div>
                 <div class="newsdivider"></div>
                 <div class='loggedas'>
                 <?php if (!isset($_SESSION['usr'])) {?>
 					<form action='core/do_login.php' method='post'  autocomplete='off' enctype='multipart/form-data'>
                         <input style="display:none">
                         <input type="password" style="display:none">
-                        <input value=''  name='login_username' class='usrinput' placeholder="Username" autocomplete="off" type='text' />
-						<input value=''  name='login_password' class='usrinput' style="margin-top:5px;" placeholder="Password" autocomplete="off" type='password' />
-						<input value='Login' name='login' id='submit' type='submit'>
-                        <a href='register.php' /><div class='submit-submenu'>Register</div></a>
+                        <input value=''  name='login_username' class='usrinput' placeholder="Логин" autocomplete="off" type='text' />
+						<input value=''  name='login_password' class='usrinput' style="margin-top:5px;" placeholder="Пароль" autocomplete="off" type='password' />
+						<input value='Войти' name='login' id='submit' type='submit'>
+                        <a href='register.php' /><div class='submit-submenu'>Регистация</div></a>
                     </form>
 				<?php } else { $user_account->construct(ucfirst($user_prw));?>
 					<div id='inforow' class="skinnytip" data-text="<div class='miniinfo'>This field represent your registrar email</div>">
@@ -91,14 +91,14 @@
             </div>
             <div class="connectionguide"></div>
             <div class="dpatches"></div>
-            <div class="rmlist">set realmlist <?php echo $realmPortal; ?></div>
+            <div class="rmlist"><?php echo $realmPortal; ?></div>
             <?php $realminfo = new realm;
             $realminfo->construct(1);?>
             <div class="realmstat">
                 <a href="realm.php?id=<?php echo $realminfo->realm_id;?>">
                     <img class="gversion" src='images/r-wod.png' height='19' alt='username'><div class="realmname"><a href="realm.php?realm=1/<?php echo urlencode($realminfo->rm_name); ?>" class="realmnamelink"><?php echo $realminfo->rm_name; ?></a></div>
-                    <div class="realminfo">Online: <?php echo $realminfo->total_online;?>/250
-                    Alliance: <?php echo $realminfo->alliance;?> Horde: <?php echo $realminfo->horde;?></div>
+                    <div class="realminfo">Онлайн: <?php echo $realminfo->total_online;?>
+                    Альянс: <?php echo $realminfo->alliance;?> Орда: <?php echo $realminfo->horde;?></div>
                 </a>
             </div>
         </div>

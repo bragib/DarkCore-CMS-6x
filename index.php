@@ -47,9 +47,8 @@ $user_account = new account;
 						<div class='newsthumbresult'>&emsp;&emsp;<?php echo strip_tags(substr($data_news->last_topic_index['body'], 0, 300)); ?>...</div>
 						<div class='newsthumbbutton'>
 							<div class='thb-left'>
-								<label style='color:#72BF8B;'>By</label> <a href="../player.php?id=<?php echo $data_news->last_topic_index['autor']; ?>"><label style='font-size:14px !important;color:#<?php echo namecolor(get_rank_byid($data_news->last_topic_index['autor']),get_vip_byid($data_news->last_topic_index['autor'])); ?>;'><?php echo ucfirst(strtolower(get_username_byid($data_news->last_topic_index['autor']))); ?></label></a>
+								<label style='color:#72BF8B;'>Опубликовал</label> <a href="../player.php?id=<?php echo $data_news->last_topic_index['autor']; ?>"><label style='font-size:14px !important;color:#<?php echo namecolor(get_rank_byid($data_news->last_topic_index['autor']),get_vip_byid($data_news->last_topic_index['autor'])); ?>;'><?php echo ucfirst(strtolower(get_username_byid($data_news->last_topic_index['autor']))); ?></label></a>
 								<label style='color:#72BF8B;'> in <?php echo substr($data_news->last_topic_index['date'],0,10); ?> </label>
-								<label style='color:#72BF8B;'>Comments to this post ( </label><label style='color:#42E2A8;'><?php echo total_comments($data_news->last_topic_index['id']); ?></label><label style='color:#72BF8B;'> ) </label>
 							</div>
                             <div class="thb-right"><a href='board/topic?id=<?php echo $data_news->last_topic_index['id']; ?>&page=1/<?php echo urlencode($data_news->last_topic_index['title']); ?>' class='lastnews-right-text'>Read All...</a></div>
 
@@ -98,17 +97,17 @@ VK.Widgets.Group("vk_groups", {mode: 0, width: "287", height: "283", color1: 'FF
 		</div>
         <div id='index-content-right'>
             <div class='acclogin-info'>
-                <div class='acclogin-info-head-text'>ACCOUNT <?php if (isset($user_prw)){echo "- <a href='user.php' class='accnamelink'>".strtoupper($user_prw)."</a>";}; ?></div>
+                <div class='acclogin-info-head-text'>Аккаунт <?php if (isset($user_prw)){echo "- <a href='user.php' class='accnamelink'>".strtoupper($user_prw)."</a>";}; ?></div>
                 <div class="newsdivider"></div>
                 <div class='loggedas'>
                 <?php if (!isset($_SESSION['usr'])) {?>
 					<form action='core/do_login.php' method='post'  autocomplete='off' enctype='multipart/form-data'>
                         <input style="display:none">
                         <input type="password" style="display:none">
-                        <input value='' name='login_username' class='usrinput' placeholder="Username" autocomplete="off" type='text' />
-						<input value='' name='login_password' class='usrinput' style="margin-top:5px;" placeholder="Password" autocomplete="off" type='password' />
-						<input value='Login' name='login' id='submit' type='submit'>
-                        <a href='register.php' /><div class='submit-submenu'>Register</div></a>
+                        <input value='' name='login_username' class='usrinput' placeholder="Логин" autocomplete="off" type='text' />
+						<input value='' name='login_password' class='usrinput' style="margin-top:5px;" placeholder="Пароль" autocomplete="off" type='password' />
+						<input value='Войти' name='login' id='submit' type='submit'>
+                        <a href='register.php' /><div class='submit-submenu'>Регистрация</div></a>
                     </form>
 
 				<?php } else {
@@ -143,14 +142,14 @@ VK.Widgets.Group("vk_groups", {mode: 0, width: "287", height: "283", color1: 'FF
             </div>
             <div class="connectionguide"></div>
             <div class="dpatches"></div>
-            <div class="rmlist">set portal <?php echo $realmPortal; ?></div>
+            <div class="rmlist"><?php echo $realmPortal; ?></div>
             <?php $realminfo = new realm;
             $realminfo->construct(1);?>
             <div class="realmstat">
                 <a href="realm.php?id=<?php echo $realminfo->realm_id;?>">
                     <img class="gversion" src='images/r-wod.png' height='19' alt='username'><div class="realmname"><a href="realm.php?realm=1/<?php echo urlencode($realminfo->rm_name); ?>" class="realmnamelink"><?php echo $realminfo->rm_name; ?></a></div>
-                    <div class="realminfo">Online: <?php echo $realminfo->total_online;?>/250
-                    Alliance: <?php echo $realminfo->alliance;?> Horde: <?php echo $realminfo->horde;?></div>
+                    <div class="realminfo">Онлайн: <?php echo $realminfo->total_online;?>
+                    Альянс: <?php echo $realminfo->alliance;?> Орда: <?php echo $realminfo->horde;?></div>
                 </a>
             </div>
         </div>

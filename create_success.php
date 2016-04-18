@@ -21,12 +21,12 @@ $user_account = new account;
 	<?php include 'menu.php';
         if (isset($_GET["errlogin"])){
     ?>
-    <div id="notify">There was an error when logging in recheck your account and password corectly acc and pass are case sensitive</div>
+    <div id="notify">Произошла ошибка при входе перепроверять логин и пароль</div>
     <?php } ?>
 	<div id='content'>
 		<div id='index-content-left'>
 			<div id='lastnews'>
-				<div class='lastnews-head-text'>ACCOUNT CREATED WITH SUCCESS</div>
+				<div class='lastnews-head-text'>УЧЕТНУЮ ЗАПИСЬ СОЗДАНА С УСПЕХОМ</div>
                 <div class="newsdivider"></div>
 			</div>
 		</div>
@@ -47,8 +47,8 @@ $user_account = new account;
                         <input type="password" style="display:none">
                         <input value=''  name='login_username' class='usrinput' placeholder="Username" autocomplete="off" type='text' />
 						<input value=''  name='login_password' class='usrinput' style="margin-top:5px;" placeholder="Password" autocomplete="off" type='password' />
-						<input value='Login' name='login' id='submit' type='submit'>
-                        <a href='register' /><div class='submit-submenu'>Register</div></a>
+						<input value='Login' name='Логин' id='submit' type='submit'>
+                        <a href='register' /><div class='submit-submenu'>Регистрация</div></a>
                     </form>
 
 				<?php } else { $user_account->construct(ucfirst($user_prw));?>

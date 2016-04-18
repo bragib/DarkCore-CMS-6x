@@ -15,21 +15,21 @@
 		<div id='index-content-left'>
 			<div id='user-box'>
 				<div class='reg-alts-part-tree'>
-					<div class='user-head-text'>Login to my account</div>
+					<div class='user-head-text'>Войти в мой аккаунт</div>
 					<div class="newsdivider"></div>
 					<center>
 						<form action='core/do_login.php' method='post' autocomplete='off' enctype='multipart/form-data'>
 							<table>
 								<tr>
-									<td><input class='reg-input' type="text" name="login_username" placeholder="Username" required></td>
+									<td><input class='reg-input' type="text" name="login_username" placeholder="Логин" required></td>
 								</tr>
 								<tr>
-									<td><input class='reg-input' type="password" name="login_password" autocomplete='off' placeholder="Password" required></td>
+									<td><input class='reg-input' type="password" name="login_password" autocomplete='off' placeholder="Пароль" required></td>
 								</tr>
 							</table>
 							<input id='submit' type='submit' name='login' value='Login'>
 						</form></br>
-						<a href=''><span class='reg-mark'>Forgot your password?</span></a>
+						<a href=''><span class='reg-mark'>Забыли пароль?</span></a>
 					</center>
 				</div>
 			</div>
@@ -59,8 +59,8 @@
             <div class="realmstat">
                 <a href="realm.php?id=<?php echo $realminfo->realm_id;?>">
                     <img class="gversion" src='images/r-wod.png' height='19' alt='username'><div class="realmname"><a href="realm.php?realm=1/<?php echo urlencode($realminfo->rm_name); ?>" class="realmnamelink"><?php echo $realminfo->rm_name; ?></a></div>
-                    <div class="realminfo">Online: <?php echo $realminfo->total_online;?>/250
-                    Alliance: <?php echo $realminfo->alliance;?> Horde: <?php echo $realminfo->horde;?></div>
+                    <div class="realminfo">Онлайн: <?php echo $realminfo->total_online;?>
+                    Альянс: <?php echo $realminfo->alliance;?> Орда: <?php echo $realminfo->horde;?></div>
                 </a>
             </div>
         </div>
