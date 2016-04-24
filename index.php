@@ -147,7 +147,7 @@ VK.Widgets.Group("vk_groups", {mode: 0, width: "287", height: "283", color1: 'FF
             $realminfo->construct(1);?>
             <div class="realmstat">
                 <a href="realm.php?id=<?php echo $realminfo->realm_id;?>">
-                    <img class="gversion" src='images/r-wod.png' height='19' alt='username'><div class="realmname"><a href="realm.php?realm=1/<?php echo urlencode($realminfo->rm_name); ?>" class="realmnamelink"><?php echo $realminfo->rm_name; ?></a></div>
+                    <img class="gversion" src='images/r-wod.png' height='1' alt='username'><div class="realmname"><a href="realm.php?realm=1/<?php echo urlencode($realminfo->rm_name); ?>" class="realmnamelink"><?php echo $realminfo->rm_name; ?></a></div>
                     <div class="realminfo">Онлайн: <?php echo $realminfo->total_online;?>
                     Альянс: <?php echo $realminfo->alliance;?> Орда: <?php echo $realminfo->horde;?></div>
                 </a>

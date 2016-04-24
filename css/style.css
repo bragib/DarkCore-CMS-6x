@@ -668,10 +668,10 @@ background: #1F1F1F;
   }
 .realmstat{border-radius: 3px;
     width: 250px;
-    height: 90px;
+    height: 40px;
     background: url("../images/realmstatus.png");
     margin-bottom: 5px;
-    box-shadow: 3px 3px 60px #282828 inset, 0px 3px 8px #000;
+   /* box-shadow: 3px 3px 60px #282828 inset, 0px 3px 8px #000; */
     border: 1px solid #383838;
     padding: 15px;}
 .realmstat:hover{background:url("../images/realmstatus.png") 0 -120px;cursor:pointer;}
@@ -684,9 +684,9 @@ background: #1F1F1F;
     vertical-align: top;
     color: #59FF95;
     text-shadow:2px 2px 10px black;
-    margin-left: 15px;
-    font-size:18px;
-    margin-bottom:60px;
+    /* margin-left: 15px; */
+    font-size:14px;
+    margin-bottom:10px;
 }
 .realmnamelink {
     color: #B5DEC4;
